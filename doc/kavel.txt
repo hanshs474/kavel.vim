@@ -1,0 +1,29 @@
+*kavel.txt*  Generate an AI image from Vim with Kavel
+
+Kavel is a free AI video generator and AI image generator. This plugin sends a
+prompt to https://www.kavel.ai and inserts the finished image's Markdown link
+below the cursor.
+
+COMMANDS                                                     *kavel-commands*
+
+:KavelImage {prompt}                                          *:KavelImage*
+		Generate an image from {prompt}. Runs on a timer, so you can
+		keep editing; the link appears below the line you were on.
+
+:'<,'>KavelImage
+		Use the selected lines as the prompt.
+
+OPTIONS                                                       *kavel-options*
+
+g:kavel_api_key        API key from https://www.kavel.ai/settings/apikeys
+                       (falls back to $KAVEL_API_KEY). Without one, calls run
+                       on Kavel's free allowance.
+g:kavel_model          Image model to use when a key is set.
+g:kavel_aspect_ratio   Default "1:1".
+g:kavel_insert_link    Default 1. Set 0 to only echo the URL.
+
+REQUIREMENTS                                             *kavel-requirements*
+
+Vim 8.2+ or Neovim 0.5+, and curl.
+
+ vim:tw=78:ts=8:ft=help:norl:
